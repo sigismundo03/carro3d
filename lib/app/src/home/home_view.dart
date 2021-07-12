@@ -17,7 +17,12 @@ class _HomeViwerState extends State<HomeView> {
         title: const Text("Lojas de carros"),
         centerTitle: true,
       ),
-      body: const CardCarro(),
+      body: GridView.builder(
+        itemCount: 10,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 0.70),
+        itemBuilder: (context, index) => const CardCarro(),
+      ),
     );
   }
 }
