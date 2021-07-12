@@ -1,3 +1,4 @@
+import 'package:carro3d/app/src/home/data/data.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/card_carro.dart';
@@ -14,23 +15,25 @@ class _HomeViwerState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lojas de carros"),
+        title: const Text("Loja de carros"),
         centerTitle: true,
       ),
       body: Column(
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GridView.builder(
-                itemCount: 10,
+                itemCount: produtos.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.70,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                 ),
-                itemBuilder: (context, index) => const CardCarro(),
+                itemBuilder: (context, index) => CardCarro(
+                  item: produtos[index],
+                ),
               ),
             ),
           ),
