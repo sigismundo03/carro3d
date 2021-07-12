@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CardCarro extends StatelessWidget {
+  final Map<String, dynamic> item;
   const CardCarro({
     Key? key,
+    required this.item,
   }) : super(key: key);
 
   @override
@@ -16,23 +18,26 @@ class CardCarro extends StatelessWidget {
             height: 24,
           ),
           Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Image.network(
-                "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_960_720.jpg",
-                fit: BoxFit.fill,
+            child: Card(
+              elevation: 5,
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Image.network(
+                  item["imagemURL"],
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: Text(
-              "BMW",
-              style: TextStyle(fontStyle: FontStyle.normal),
+              item["nome"],
+              style: const TextStyle(fontStyle: FontStyle.normal),
             ),
           ),
           const Text(
