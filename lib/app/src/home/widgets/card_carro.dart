@@ -15,12 +15,9 @@ class CardCarro extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          Card(
-            elevation: 5,
+          Expanded(
             child: Container(
               padding: const EdgeInsets.all(16),
-              height: 180,
-              width: 160,
               decoration: BoxDecoration(
                 color: Colors.black12,
                 borderRadius: BorderRadius.circular(16),
@@ -35,7 +32,7 @@ class CardCarro extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Text(
               "BMW",
-              style: TextStyle(fontStyle: FontStyle.italic),
+              style: TextStyle(fontStyle: FontStyle.normal),
             ),
           ),
           const Text(
