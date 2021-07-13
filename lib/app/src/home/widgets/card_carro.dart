@@ -34,9 +34,12 @@ class CardCarro extends StatelessWidget {
                           builder: (context) => DetalisView(item: item))),
                   child: Hero(
                     tag: item,
-                    child: Image.network(
-                      item["imagemURL"],
-                      fit: BoxFit.fill,
+                    child: FadeInImage(
+                      image: NetworkImage(
+                        item["imagemURL"],
+                      ),
+                      placeholder:
+                          const AssetImage("assets/images/placeholder.png"),
                     ),
                   ),
                 ),
