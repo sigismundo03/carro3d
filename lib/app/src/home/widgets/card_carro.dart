@@ -1,3 +1,4 @@
+import 'package:carro3d/app/src/details/view/details_view.dart';
 import 'package:flutter/material.dart';
 
 class CardCarro extends StatelessWidget {
@@ -26,9 +27,18 @@ class CardCarro extends StatelessWidget {
                   color: Colors.black12,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Image.network(
-                  item["imagemURL"],
-                  fit: BoxFit.fill,
+                child: InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetalisView(item: item))),
+                  child: Hero(
+                    tag: item,
+                    child: Image.network(
+                      item["imagemURL"],
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
               ),
             ),
