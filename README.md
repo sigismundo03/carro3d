@@ -43,7 +43,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Dart](hhttps://dart.dev/)
 - [mvvm](encurtador.com.br/sJR17)
 - [3D Model Viewer](https://pub.dev/packages/model_viewer)
-- []()
+- [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
 
 
 
