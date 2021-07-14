@@ -1,3 +1,4 @@
+import 'package:carro3d/app/src/core/constante.dart';
 import 'package:carro3d/app/src/details/view/details_view.dart';
 import 'package:flutter/material.dart';
 
@@ -38,8 +39,7 @@ class CardCarro extends StatelessWidget {
                       image: NetworkImage(
                         item["imagemURL"],
                       ),
-                      placeholder:
-                          const AssetImage("assets/images/placeholder.png"),
+                      placeholder: const AssetImage(placeholder),
                     ),
                   ),
                 ),
