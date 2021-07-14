@@ -66,7 +66,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## **Features**
 
-- [ ] Lista  de card
+- [X] Lista  de card
 - [ ] Detalhe do  produto
 - [ ] modal
 
