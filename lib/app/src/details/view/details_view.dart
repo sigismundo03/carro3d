@@ -1,13 +1,18 @@
+import 'package:carro3d/app/src/details/view/teste.dart';
 import 'package:carro3d/app/src/details/widgets/carddetalhe.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_cube/flutter_cube.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DetalisView extends StatelessWidget {
-  final Map<String, dynamic> item;
-  const DetalisView({Key? key, required this.item}) : super(key: key);
+  const DetalisView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> item =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -41,12 +46,46 @@ class DetalisView extends StatelessWidget {
                   margin: const EdgeInsets.only(
                     left: 360,
                   ),
-                  child: const Tooltip(
+                  child: Tooltip(
                     message: "Modelo 3D",
-                    child: Icon(
-                      FontAwesomeIcons.eye,
-                      color: Colors.white,
-                      size: 25,
+                    child: IconButton(
+                      icon: const Icon(
+                        FontAwesomeIcons.eye,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Teste())),
+                      //  showDialog<String>(
+                      //   context: context,
+                      //   builder: (BuildContext context) => AlertDialog(
+                      //     // title: const Text('AlertDialog Title'),
+                      //     content: Container(
+                      //       width: 200.0,
+                      //       height: 200.0,
+                      //       child: Cube(
+
+                      //         onSceneCreated: (Scene scene) {
+                      //           scene.world.add(Object(
+                      //               fileName:
+                      //                   "assets/images/Lamborghini .obj"));
+                      //         },
+                      //       ),
+                      //     ),
+                      //     // actions: <Widget>[
+                      //     //   TextButton(
+                      //     //     onPressed: () => Navigator.pop(context, 'Cancel'),
+                      //     //     child: const Text('Cancel'),
+                      //     //   ),
+                      //     //   TextButton(
+                      //     //     onPressed: () => Navigator.pop(context, 'OK'),
+                      //     //     child: const Text('OK'),
+                      //     //   ),
+                      //     // ],
+                      //   ),
+                      // ),
                     ),
                   ),
                 ),

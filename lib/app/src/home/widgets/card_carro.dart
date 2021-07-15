@@ -29,10 +29,13 @@ class CardCarro extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: InkWell(
-                  onTap: () => Navigator.push(
+                  onTap: () {
+                    Navigator.pushNamed(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => DetalisView(item: item))),
+                      "/Detalhe",
+                      arguments: item,
+                    );
+                  },
                   child: Hero(
                     tag: item,
                     child: FadeInImage(

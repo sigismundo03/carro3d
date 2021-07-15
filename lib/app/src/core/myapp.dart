@@ -1,3 +1,4 @@
+import 'package:carro3d/app/src/details/view/details_view.dart';
 import 'package:carro3d/app/src/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const HomeView(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const HomeView(),
+        "/Detalhe": (context) => const DetalisView(),
+      },
     );
   }
 }
