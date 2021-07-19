@@ -12,7 +12,7 @@ class _TesteState extends State<Teste> {
   late Object shark;
   @override
   void initState() {
-    shark = Object(fileName: "assets/carro/teste.obj");
+    shark = Object(fileName: "assets/carro/alpha_romao.obj");
     shark.rotation.setValues(0, 90, 0);
     shark.updateTransform();
     super.initState();
@@ -26,7 +26,7 @@ class _TesteState extends State<Teste> {
         child: Cube(
           onSceneCreated: (Scene scene) {
             scene.world.add(shark);
-            scene.camera.zoom = 5;
+            scene.camera.zoom = 10;
           },
         ),
       ),
