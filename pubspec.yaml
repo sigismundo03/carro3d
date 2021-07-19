@@ -63,8 +63,9 @@ flutter:
   assets:
       - assets/images/
       - assets/shark/
-      - assets/BMW850/
       - assets/carro/
+      - assets/Twister/
+      
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
