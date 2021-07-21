@@ -22,13 +22,4 @@ class ListCarroModelView extends ChangeNotifier {
 
     notifyListeners();
   }
-
-  // Future<void> listCarro() async {
-  //   var mydata = json.decode(await getJson());
-  //   return mydata.map((car) => CarroModel.fromJson(car)).toList();
-  // }
-
-  // Future<String> getJson() {
-  //   return rootBundle.loadString(dataJson);
-  // }
 }
