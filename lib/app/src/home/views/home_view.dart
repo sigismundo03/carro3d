@@ -27,13 +27,13 @@ class _HomeViwerState extends State<HomeView> {
         title: const Text("Loja de carros"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          carros.status == Status.wait.toString()
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
-              : Expanded(
+      body: carros.status == Status.wait.toString()
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Column(
+              children: [
+                Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: GridView.builder(
@@ -50,9 +50,9 @@ class _HomeViwerState extends State<HomeView> {
                       ),
                     ),
                   ),
-                )
-        ],
-      ),
+                ),
+              ],
+            ),
     );
   }
 }
