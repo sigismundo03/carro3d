@@ -1,5 +1,6 @@
 import 'package:carro3d/app/src/details/view/teste.dart';
 import 'package:carro3d/app/src/details/widgets/carddetalhe.dart';
+import 'package:carro3d/app/src/home/modelView/carro_model_view.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_cube/flutter_cube.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,13 +12,13 @@ class DetalisView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> item =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    CarroModelView item =
+        ModalRoute.of(context)!.settings.arguments as CarroModelView;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          item["nome"],
+          item.nome,
           style: const TextStyle(fontSize: 24),
         ),
         elevation: 0,
@@ -38,7 +39,7 @@ class DetalisView extends StatelessWidget {
                       // shape: BoxShape.circle,
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Image.network(item["imagemURL"]),
+                    child: Image.network(item.imagemURL),
                   ),
                 ),
                 Container(
@@ -114,19 +115,19 @@ class DetalisView extends StatelessWidget {
                 children: [
                   CardDetalhe(
                     icons: FontAwesomeIcons.moneyBillAlt,
-                    name: "Preço:${item["preco"]}R\$",
+                    name: "Preço:${item.preco}R\$",
                   ),
                   CardDetalhe(
                     icons: FontAwesomeIcons.calendarWeek,
-                    name: "Ano: ${item["ano"]}",
+                    name: "Ano: ${item.ano}",
                   ),
                   CardDetalhe(
                     icons: FontAwesomeIcons.tachometerAlt,
-                    name: "${item["km"]} KM",
+                    name: "${item.km} KM",
                   ),
                   CardDetalhe(
                     icons: FontAwesomeIcons.gasPump,
-                    name: "Cumbustivel: ${item["cumbustivel"]}",
+                    name: "Cumbustivel: ${item.cumbustivel}",
                   ),
                 ],
               ),

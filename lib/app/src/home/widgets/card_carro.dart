@@ -1,8 +1,9 @@
 import 'package:carro3d/app/src/core/constante.dart';
+import 'package:carro3d/app/src/home/modelView/carro_model_view.dart';
 import 'package:flutter/material.dart';
 
 class CardCarro extends StatelessWidget {
-  final Map<String, dynamic> item;
+  final CarroModelView item;
   const CardCarro({
     Key? key,
     required this.item,
@@ -39,7 +40,7 @@ class CardCarro extends StatelessWidget {
                     tag: item,
                     child: FadeInImage(
                       image: NetworkImage(
-                        item["imagemURL"],
+                        item.imagemURL,
                       ),
                       placeholder: const AssetImage(placeholder),
                     ),
@@ -51,13 +52,13 @@ class CardCarro extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Text(
-              item["nome"],
+              item.nome,
               style: const TextStyle(fontStyle: FontStyle.normal),
             ),
           ),
-          const Text(
-            r"R$:203",
-            style: TextStyle(
+          Text(
+            "R\$: ${item.preco}",
+            style: const TextStyle(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
             ),

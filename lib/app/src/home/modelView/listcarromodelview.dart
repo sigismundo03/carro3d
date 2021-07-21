@@ -1,11 +1,34 @@
-import 'package:carro3d/app/src/home/model/carro_model.dart';
+import 'package:carro3d/app/src/home/modelView/carro_model_view.dart';
+import 'package:carro3d/app/src/home/repository/repository.dart';
 import 'package:flutter/material.dart';
 
-class ListCarroModelView extends ChangeNotifier {
-  late CarroModel listaCarro;
-  late List<Map<String, dynamic>> list;
+enum Status {
+  wait,
+  error,
+  success,
+}
 
-  Future<void> listCarro() async {
-    Future.delayed(const Duration(seconds: 2));
+class ListCarroModelView extends ChangeNotifier {
+  late List<CarroModelView> car;
+  late String status;
+
+  Future<void> fetchCars() async {
+    status = Status.wait.toString();
+    final results = await RepositoryCar().fetcCarro();
+    car = results.map((item) => CarroModelView(carro: item)).toList();
+    if (car.isNotEmpty) {
+      status = Status.success.toString();
+    }
+
+    notifyListeners();
   }
+
+  // Future<void> listCarro() async {
+  //   var mydata = json.decode(await getJson());
+  //   return mydata.map((car) => CarroModel.fromJson(car)).toList();
+  // }
+
+  // Future<String> getJson() {
+  //   return rootBundle.loadString(dataJson);
+  // }
 }
